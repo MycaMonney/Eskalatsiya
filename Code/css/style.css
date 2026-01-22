@@ -14,29 +14,30 @@ body {
     align-items: center;
 }
 
+/* Conteneur principal */
 .container {
     width: 360px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
+/* Titre */
+.container h1 {
+    margin-bottom: 25px;
     font-size: 32px;
 }
 
+/* Carte formulaire */
 form {
     background: #222;
     padding: 24px;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-form h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-}
-
+/* Inputs */
 input {
     width: 100%;
     padding: 12px;
@@ -51,6 +52,7 @@ input::placeholder {
     color: #999;
 }
 
+/* Bouton */
 button {
     width: 100%;
     padding: 12px;
@@ -68,17 +70,27 @@ button:hover {
     background: #ff2f40;
 }
 
+/* Messages */
 .message {
     margin-top: 12px;
     font-size: 14px;
 }
 
-/* Message succès */
 .message.success {
     color: #4CAF50;
 }
 
-/* Message erreur */
 .message.error {
     color: #ff4d4d;
+}
+
+/* Lien */
+a {
+    color: #8ab4f8;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

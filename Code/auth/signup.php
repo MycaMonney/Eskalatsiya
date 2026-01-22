@@ -1,28 +1,33 @@
-<?php
-session_start();
-require "db.php";
+<!DOCTYPE html>
+<html lang="fr">
 
-if (isset($_POST["signup"])) {
-    $username = trim($_POST["username"] ?? "");
-    $password = $_POST["password"] ?? "";
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
 
-    if ($username && $password) {
-        $hash = password_hash($password, PASSWORD_BCRYPT);
+<body>
 
-        try {
-            $stmt = $pdo->prepare(
-                "INSERT INTO utilisateur (username, mot_de_passe_hash)
-                 VALUES (?, ?)"
-            );
-            $stmt->execute([$username, $hash]);
+    <div class="container">
 
-            // Redirection vers la page de connexion
-            header("Location: login.php?signup=success");
-            exit;
-        } catch (PDOException $e) {
-            $messageSignup = "Nom d'utilisateur déjà utilisé";
-        }
-    } else {
-        $messageSignup = "Tous les champs sont obligatoires";
-    }
-}
+        <h1>Inscription</h1>
+
+        <?php if (!empty($messageSignup)): ?>
+            <p class="message error"><?= htmlspecialchars($messageSignup) ?></p>
+        <?php endif; ?>
+
+        <form method="POST">
+            <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button type="submit" name="signup">S'inscrire</button>
+        </form>
+
+        <a href="login.php">Déjà un compte ?</a>
+
+    </div>
+
+</body>
+
+
+</html>
