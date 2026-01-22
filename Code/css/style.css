@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 360px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+form {
+    background: #222;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+form h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4655;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #ff2f40;
+}
+
+.message {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* Message succès */
+.message.success {
+    color: #4CAF50;
+}
+
+/* Message erreur */
+.message.error {
+    color: #ff4d4d;
+}
